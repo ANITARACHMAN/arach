@@ -12,6 +12,7 @@ import {
   View,
   Image
 } from 'react-native';
+import Judul from './Judul';
 
 const instructions = Platform.select({
  
@@ -23,6 +24,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <Judul/>
         <Text style={styles.welcome}>
         </Text>
         <Text style={styles.instructions}>
@@ -40,6 +42,8 @@ export default class App extends Component<Props> {
         <Text>Nama : Anita Rachman</Text>
         <Text>Kelas : XI RPL 3</Text>
         <Text>No Absen : 06</Text>
+        <Text>TTL : Jakarta, 23 Januari 2002</Text>
+        <Text>Hobby : Nonton </Text>
         <Text style={styles.instructions}>
           {instructions}
         </Text>

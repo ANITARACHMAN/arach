@@ -4,15 +4,15 @@ import {Text} from 'react-native'
 class Judul extends Component{
 	render(){
 		return (
-			<Text style={salon.judul}>Biodata</Text>
+			<Text style={tulisan.judul}>{this.props.title}</Text>
 		)
 	}
 }
 
-const salon = {
+const tulisan = {
 	judul:{
 		color: "#b40036",
-		fontSize: 75,
+		fontSize: 50,
 		fontWeight: 'bold'
 	}
 }

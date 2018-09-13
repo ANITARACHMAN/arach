@@ -13,7 +13,6 @@ import {
   Image
 } from 'react-native';
 import Judul from './Judul';
-import Login from './Screen/Login'
 
 const instructions = Platform.select({
  
@@ -25,14 +24,26 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <Judul title="LOGIN"/>
+         <Judul title="BIODATA"/>
+        <Judul title="SISWA"/>
         <Text style={styles.welcome}>
         </Text>
-        <Login/>
-        
-      
-
-
-
+        <Text>Hallo!!!</Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Image source={require('./anita.jpg')} style={{width:240, height:300}} />
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text>Nama : Anita Rachman</Text>
+        <Text>Kelas : XI RPL 3</Text>
+        <Text>No Absen : 06</Text>
+        <Text>TTL : Jakarta, 23 Januari 2002</Text>
+        <Text>Hobby : Nonton </Text>
         <Text style={styles.instructions}>
           {instructions}
         </Text>
@@ -47,13 +58,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffe1b8',
+    backgroundColor: '#F8B1AB',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    fontWeight:'bold',
   },
   instructions: {
     textAlign: 'center',

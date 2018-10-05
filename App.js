@@ -1,63 +1,60 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image
-} from 'react-native';
+import React from 'react';
+import { View, Text, Button, Image, TextInput } from 'react-native';
+import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
 import Judul from './Judul';
-import Login from './Screen/Login'
-
-const instructions = Platform.select({
- 
-});
-
-
-type Props = {};
-export default class App extends Component<Props> {
+class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-        </Text>
-        <Login/>
-        
-      
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Image source={require('./icon.png')} style={{width:200, height:200}} />
+
+                
+                <TextInput
+                    style={{width:200, height: 40,marginTop:50}}
+                    placeholder="Username"
+                    onChangeText={(text) => this.setState({text})}></TextInput>
+                
+
+                <TextInput
+                    style={{width:200,height: 40}}
+                    placeholder="Password"
+                    onChangeText={(text) => this.setState({text})}></TextInput>
 
 
-
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-    
+                <Button
+          title="LOGIN"
+          color="#ff6f6f"
+          onPress={() => {
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Details' })
+              ],
+            }))
+          }}
+        />
       </View>
     );
-  }
+  }  
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffe1b8',
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Judul/>
+      </View>
+    );
+  }  
+}
+
+export default createStackNavigator({
+  Home: {
+    screen: HomeScreen,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    fontWeight:'bold',
+  Details: {
+    screen: DetailsScreen,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+}, {
+    initialRouteName: 'Home',
 });

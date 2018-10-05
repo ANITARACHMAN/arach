@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native'
+import {Text, View, Image} from 'react-native'
 
 class Judul extends Component{
 	render(){

@@ -1,17 +1,28 @@
 import React, {Component} from 'react';
-import {Text, View, Image} from 'react-native'
+import {Text,View, Image} from 'react-native';
 
-class Judul extends Component{
+export default class Judul extends Component{
+
 	render(){
 		return (
 		
-			<View>
-			<Image source={require('./anita.jpg')} style={{width:140, height:200}} />
-			 <Text>Nama : Anita Rachman</Text>
-       		 <Text>Kelas : XI RPL 3</Text>
-      		 <Text>No Absen : 06</Text>
-     	  	 <Text>TTL : Jakarta, 23 Januari 2002</Text>
-      		 <Text>Hobby : Nonton </Text>
+			<View style={tulisan.bio}>
+			<Text style={tulisan.judul}>Selamat Datang Anita</Text>
+			<Text></Text>
+        	<Text></Text>
+       	    <Text></Text>
+            <Text></Text>
+			<Image source={require('./hah.jpeg')} style={{width:230, height:280,}} />
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+			 <Text style={tulisan.bio}>Nama : Anita Rachman</Text>
+       		 <Text style={tulisan.bio}>Kelas : XI RPL 3</Text>
+      		 <Text style={tulisan.bio}>No Absen : 06</Text>
+     	  	 <Text style={tulisan.bio}>TTL : Jakarta, 23 Januari 2002</Text>
+      		 <Text style={tulisan.bio}>Hobby : Nonton </Text>
 			<Text style={tulisan.judul}>{this.props.title}</Text>
 			</View>
 		)
@@ -20,10 +31,20 @@ class Judul extends Component{
 
 const tulisan = {
 	judul:{
-		color: "#b40036",
-		fontSize: 50,
-		fontWeight: 'bold'
-	}
-}
+		color: "#cd642d",
+		fontSize: 25,
+		fontWeight: 'bold',
+	},
 
-export default Judul;
+	bio:{
+		color:"#693000",
+		TextAlign : 'center',
+		justifyContent: 'center',
+    	alignItems: 'center',
+
+	
+	}
+
+};
+
+

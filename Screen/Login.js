@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput,Button,Image} from 'react-native';
-import Judul from './Judul'
+
 export default class Login extends Component{
 
     render(){
         return(
             <View style={styles.container}> 
                 <Text style={styles.title}>LOGIN</Text>
-                 <Image source={require('./icon.png')} style={{width:200, height:200}} />
+                <Image source={require('./icon.png')} style={{width:200, height:200}} />
 
                 
                 <TextInput
@@ -22,12 +22,17 @@ export default class Login extends Component{
                     onChangeText={(text) => this.setState({text})}></TextInput>
               
 
-                <Button style ={{margin: 20,flexDirection: 'row',justifyContent: 'space-between'}}
-                title="Login" 
-                color="#ff6f6f"
-                
-
-                />
+                <Button
+          title="LOGIN"
+          onPress={() => {
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Details' })
+              ],
+            }))
+          }}
+        />
             </View>
 
         )

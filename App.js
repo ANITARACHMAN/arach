@@ -5,7 +5,7 @@ import Judul from './Judul';
 class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor : "#ffe0ba" }}>
         <Image source={require('./icon.png')} style={{width:200, height:200}} />
 
                 
